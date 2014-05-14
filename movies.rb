@@ -25,7 +25,7 @@ get '/movies/create' do
 end
 
 get '/movies' do
-  response = Typhoeus.get("localhost:3000/movies.json?query=#{params[:query]}")
+  response = Typhoeus.get("localhost:3000/movies?query=#{params[:query]}")
   @movies = JSON.parse(response.body)
   erb :index
 end
